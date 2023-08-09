@@ -9,7 +9,7 @@ d3.json(url).then((data)=> {
 });
 
 
-
+// Setting up the default page data.
 function init(){
 
     let dropdownMenu = d3.select("#selDataset");
@@ -21,13 +21,16 @@ function init(){
         //Using a forloop, forEach or for(let i = 0; i< array.length; i++)
         names.forEach((pick)=> {
             
+            // checking the outcome
             console.log(` Outcome:${pick}`);
 
+            // populate the drop down menu
             dropdownMenu.append("option").text(pick).property("value",pick);
 
 
         });
 
+        //Giving them default value
         let defaults = names[0];
 
         barchart(defaults); 
@@ -121,6 +124,7 @@ function bubblechart(searchid){
         let otu_ids = sampleData.otu_ids;
         let otu_labels = sampleData.otu_labels;
 
+        //Giving the graph data
         let trace2 = {
 
             x: otu_ids,
@@ -138,15 +142,13 @@ function bubblechart(searchid){
 
 
 
-
-
 // Testing with value 940
 // metadatas(940);
 
 
 
 
-
+        
         let layout = {
             
             hovermode: "closest",
